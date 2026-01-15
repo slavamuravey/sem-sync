@@ -1,0 +1,69 @@
+{
+  "name": "sem-sync",
+  "version": "1.0.0",
+  "homepage": "https://github.com/slavamuravey/sem-sync",
+  "description": "Lightweight library for controlling concurrent asynchronous operations in JavaScript",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "umd:main": "dist/sem-sync.umd.min.js",
+  "unpkg": "dist/sem-sync.umd.min.js",
+  "module": "dist/sem-sync.esm.js",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run build:es && npm run build:dist && npm run build:types && npm run docs",
+    "build:dist": "npm run build:dist:dev && npm run build:dist:prod",
+    "build:dist:dev": "rollup -c",
+    "build:dist:prod": "NODE_ENV=production rollup -c",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:es": "tsc --project tsconfig.es.json",
+    "test": "node --test",
+    "lint": "eslint {src,example}/**/* ./*.js --ext .js,.ts",
+    "lint:fix": "npm run lint -- --fix",
+    "docs": "typedoc --plugin typedoc-plugin-markdown --readme none --out docs src/index.ts"
+  },
+  "keywords": [
+    "concurrency",
+    "synchronization",
+    "mutex",
+    "semaphore",
+    "lock",
+    "async",
+    "synchronization-primitives",
+    "nodejs",
+    "browser",
+    "race-condition",
+    "deadlock-prevention"
+  ],
+  "author": {
+    "name": "Viacheslav Muravyev",
+    "email": "slavamuravey@mail.ru",
+    "url": "https://github.com/slavamuravey/sem-sync"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^22.12.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "rollup": "^2.79.2",
+    "tsx": "^4.19.2",
+    "typedoc": "^0.28.7",
+    "typedoc-plugin-markdown": "^4.7.1",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "src",
+    "es",
+    "dist"
+  ]
+}
