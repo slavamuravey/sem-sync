@@ -1,4 +1,4 @@
-## Async Sync
+## Sem Sync
 
 A lightweight, promise-based semaphore implementation for controlling concurrent asynchronous operations in JavaScript. 
 This library provides a modern implementation of the classic semaphore pattern with support for timeouts and abort signals.
